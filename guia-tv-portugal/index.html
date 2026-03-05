@@ -47,116 +47,221 @@
         color: var(--muted);
         font-size: 14px;
       }
+      .lang-switch {
+        display: inline-flex;
+        gap: 8px;
+        margin-bottom: 12px;
+      }
+      .lang-btn {
+        border: 1px solid var(--line);
+        background: #1a2540;
+        color: var(--text);
+        border-radius: 10px;
+        padding: 8px 12px;
+        cursor: pointer;
+        font-weight: 600;
+      }
+      .lang-btn.active {
+        background: #22406d;
+        border-color: #365f95;
+      }
+      [data-lang-block] { display: none; }
+      [data-lang-block].active { display: block; }
     </style>
   </head>
   <body>
     <main class="wrap">
       <article class="card">
-        <h1>Política de Privacidade</h1>
-        <p class="muted">
-          Aplicação: <strong>Guia TV Portugal</strong><br />
-          Developer: <strong>MindLuso</strong><br />
-          Package Android: <strong>com.mindluso.guia_tv_portugal</strong><br />
-          Última atualização: <strong>05 de março de 2026</strong>
-        </p>
+        <div class="lang-switch" role="group" aria-label="Selecionar idioma">
+          <button type="button" class="lang-btn active" data-lang-btn="pt">Português</button>
+          <button type="button" class="lang-btn" data-lang-btn="en">English</button>
+        </div>
 
-        <h2>1. Introdução</h2>
-        <p>
-          Esta Política de Privacidade explica como a aplicação Guia TV Portugal
-          recolhe, utiliza e partilha informação quando utilizas a aplicação.
-        </p>
+        <section data-lang-block="pt" class="active">
+          <h1>Política de Privacidade</h1>
+          <p class="muted">
+            Aplicação: <strong>Guia TV Portugal</strong><br />
+            Developer: <strong>MindLuso</strong><br />
+            Package Android: <strong>com.mindluso.guia_tv_portugal</strong><br />
+            Última atualização: <strong>05 de março de 2026</strong>
+          </p>
 
-        <h2>2. Dados recolhidos</h2>
-        <p>A aplicação pode tratar os seguintes tipos de dados:</p>
-        <ul>
-          <li>
-            <strong>Dados de utilização e diagnóstico</strong> (por exemplo, erros técnicos e eventos de funcionamento).
-          </li>
-          <li>
-            <strong>Identificadores de publicidade</strong> para apresentação e medição de anúncios (AdMob).
-          </li>
-          <li>
-            <strong>Dados de compras na app</strong> para validação de estado Premium (Google Play Billing).
-          </li>
-          <li>
-            <strong>Preferências locais</strong> guardadas no dispositivo (tema, favoritos, filtros, lembretes e definições).
-          </li>
-          <li>
-            <strong>Notificações locais</strong> relacionadas com lembretes criados por ti.
-          </li>
-        </ul>
+          <h2>1. Introdução</h2>
+          <p>
+            Esta Política de Privacidade explica como a aplicação Guia TV Portugal
+            recolhe, utiliza e partilha informação quando utilizas a aplicação.
+          </p>
 
-        <h2>3. Como usamos os dados</h2>
-        <ul>
-          <li>Mostrar anúncios e controlar limites de anúncios recompensados.</li>
-          <li>Gerir compras/restauro de Premium.</li>
-          <li>Guardar as tuas preferências e lembretes.</li>
-          <li>Garantir segurança, estabilidade e prevenção de abuso.</li>
-        </ul>
+          <h2>2. Dados recolhidos</h2>
+          <p>A aplicação pode tratar os seguintes tipos de dados:</p>
+          <ul>
+            <li><strong>Dados de utilização e diagnóstico</strong> (erros técnicos e eventos de funcionamento).</li>
+            <li><strong>Identificadores de publicidade</strong> para apresentação e medição de anúncios (AdMob).</li>
+            <li><strong>Dados de compras na app</strong> para validação de estado Premium (Google Play Billing).</li>
+            <li><strong>Preferências locais</strong> no dispositivo (tema, favoritos, filtros, lembretes e definições).</li>
+            <li><strong>Notificações locais</strong> relacionadas com lembretes criados por ti.</li>
+          </ul>
 
-        <h2>4. Serviços de terceiros</h2>
-        <p>
-          A aplicação integra serviços de terceiros que podem tratar dados de acordo
-          com as suas próprias políticas:
-        </p>
-        <ul>
-          <li>Google AdMob (publicidade)</li>
-          <li>Google Play Billing (compras na app)</li>
-          <li>Fontes EPG/XMLTV de terceiros (dados de programação televisiva)</li>
-        </ul>
+          <h2>3. Como usamos os dados</h2>
+          <ul>
+            <li>Fornecer e melhorar funcionalidades da aplicação.</li>
+            <li>Mostrar anúncios e controlar limites de anúncios recompensados.</li>
+            <li>Gerir compras/restauro de Premium.</li>
+            <li>Guardar as tuas preferências e lembretes.</li>
+            <li>Garantir segurança, estabilidade e prevenção de abuso.</li>
+          </ul>
 
-        <h2>5. Partilha de dados</h2>
-        <p>
-          Não vendemos dados pessoais. Alguns dados podem ser partilhados com
-          fornecedores de serviços estritamente para funcionamento da app
-          (ex.: publicidade e faturação).
-        </p>
+          <h2>4. Serviços de terceiros</h2>
+          <p>A aplicação integra serviços de terceiros com políticas próprias:</p>
+          <ul>
+            <li>Google AdMob (publicidade)</li>
+            <li>Google Play Billing (compras na app)</li>
+            <li>Fontes EPG/XMLTV de terceiros (dados de programação televisiva)</li>
+          </ul>
 
-        <h2>6. Retenção e armazenamento</h2>
-        <p>
-          Preferências e dados funcionais são armazenados localmente no dispositivo.
-          Dados tratados por terceiros seguem as respetivas políticas de retenção.
-        </p>
+          <h2>5. Partilha de dados</h2>
+          <p>
+            Não vendemos dados pessoais. Alguns dados podem ser partilhados com
+            fornecedores de serviços estritamente para funcionamento da app.
+          </p>
 
-        <h2>7. Permissões e controlo do utilizador</h2>
-        <p>Dependendo da funcionalidade usada, a app pode solicitar permissões como:</p>
-        <ul>
-          <li>Internet/rede (carregamento de dados EPG e anúncios)</li>
-          <li>Notificações (lembretes de programas)</li>
-        </ul>
-        <p>
-          Podes revogar permissões nas definições do Android e limpar dados da app
-          no teu dispositivo.
-        </p>
+          <h2>6. Retenção e armazenamento</h2>
+          <p>
+            Preferências e dados funcionais são armazenados localmente no dispositivo.
+            Dados tratados por terceiros seguem as respetivas políticas.
+          </p>
 
-        <h2>8. Crianças</h2>
-        <p>
-          A aplicação não é direcionada especificamente a crianças com menos de 13 anos.
-          Se acreditares que uma criança forneceu dados pessoais, contacta-nos para análise.
-        </p>
+          <h2>7. Permissões e controlo do utilizador</h2>
+          <p>A app pode solicitar permissões como:</p>
+          <ul>
+            <li>Internet/rede (carregamento de dados EPG e anúncios)</li>
+            <li>Notificações (lembretes de programas)</li>
+          </ul>
+          <p>Podes revogar permissões nas definições do Android.</p>
 
-        <h2>9. Segurança</h2>
-        <p>
-          Aplicamos medidas para proteger os dados tratados. No entanto,
-          nenhum método de transmissão ou armazenamento é 100% seguro.
-        </p>
+          <h2>8. Crianças</h2>
+          <p>
+            A aplicação não é direcionada especificamente a crianças com menos de 13 anos.
+          </p>
 
-        <h2>10. Alterações a esta política</h2>
-        <p>
-          Podemos atualizar esta Política de Privacidade periodicamente. A versão
-          mais recente estará sempre disponível nesta página.
-        </p>
+          <h2>9. Segurança</h2>
+          <p>
+            Aplicamos medidas para proteger os dados tratados.
+          </p>
 
-        <h2>11. Contacto</h2>
-        <p>
-          Para questões sobre privacidade ou dados, contacta:<br />
-          <a href="mailto:mindlusolabs@gmail.com">mindlusolabs@gmail.com</a>
-        </p>
+          <h2>10. Alterações a esta política</h2>
+          <p>Podemos atualizar esta política periodicamente.</p>
+
+          <h2>11. Contacto</h2>
+          <p>
+            Para questões sobre privacidade:<br />
+            <a href="mailto:mindlusolabs@gmail.com">mindlusolabs@gmail.com</a>
+          </p>
+        </section>
+
+        <section data-lang-block="en">
+          <h1>Privacy Policy</h1>
+          <p class="muted">
+            App: <strong>Guia TV Portugal</strong><br />
+            Developer: <strong>MindLuso</strong><br />
+            Android package: <strong>com.mindluso.guia_tv_portugal</strong><br />
+            Last update: <strong>March 5, 2026</strong>
+          </p>
+
+          <h2>1. Introduction</h2>
+          <p>
+            This Privacy Policy explains how Guia TV Portugal collects, uses, and
+            shares information when you use the app.
+          </p>
+
+          <h2>2. Data we collect</h2>
+          <p>The app may process the following data types:</p>
+          <ul>
+            <li><strong>Usage and diagnostics data</strong> (technical errors and app events).</li>
+            <li><strong>Advertising identifiers</strong> for ad delivery and measurement (AdMob).</li>
+            <li><strong>In-app purchase data</strong> to validate Premium status (Google Play Billing).</li>
+            <li><strong>Local preferences</strong> stored on device (theme, favorites, filters, reminders, settings).</li>
+            <li><strong>Local notifications</strong> related to reminders created by you.</li>
+          </ul>
+
+          <h2>3. How we use data</h2>
+          <ul>
+            <li>Provide and improve app features.</li>
+            <li>Display ads and enforce rewarded ad limits.</li>
+            <li>Manage purchases and Premium restoration.</li>
+            <li>Save your preferences and reminders.</li>
+            <li>Maintain security, stability, and abuse prevention.</li>
+          </ul>
+
+          <h2>4. Third-party services</h2>
+          <p>The app integrates third-party services with their own policies:</p>
+          <ul>
+            <li>Google AdMob (advertising)</li>
+            <li>Google Play Billing (in-app purchases)</li>
+            <li>Third-party EPG/XMLTV sources (TV schedule data)</li>
+          </ul>
+
+          <h2>5. Data sharing</h2>
+          <p>
+            We do not sell personal data. Some data may be shared with service
+            providers only to run the app.
+          </p>
+
+          <h2>6. Retention and storage</h2>
+          <p>
+            Preferences and functional data are stored locally on your device.
+            Third-party processed data follows their policies.
+          </p>
+
+          <h2>7. Permissions and user control</h2>
+          <p>The app may request permissions such as:</p>
+          <ul>
+            <li>Internet/network (EPG and ads loading)</li>
+            <li>Notifications (program reminders)</li>
+          </ul>
+          <p>You can revoke permissions in Android settings.</p>
+
+          <h2>8. Children</h2>
+          <p>The app is not specifically directed to children under 13.</p>
+
+          <h2>9. Security</h2>
+          <p>We apply measures to protect processed data.</p>
+
+          <h2>10. Changes to this policy</h2>
+          <p>We may update this policy from time to time.</p>
+
+          <h2>11. Contact</h2>
+          <p>
+            For privacy questions:<br />
+            <a href="mailto:mindlusolabs@gmail.com">mindlusolabs@gmail.com</a>
+          </p>
+        </section>
       </article>
       <footer>
         © 2026 MindLuso. Todos os direitos reservados.
       </footer>
     </main>
+    <script>
+      (function () {
+        const blocks = document.querySelectorAll('[data-lang-block]');
+        const buttons = document.querySelectorAll('[data-lang-btn]');
+
+        function setLang(lang) {
+          const current = lang === 'en' ? 'en' : 'pt';
+          blocks.forEach((b) => b.classList.toggle('active', b.getAttribute('data-lang-block') === current));
+          buttons.forEach((btn) => btn.classList.toggle('active', btn.getAttribute('data-lang-btn') === current));
+          document.documentElement.lang = current === 'en' ? 'en' : 'pt-PT';
+          localStorage.setItem('privacy_lang', current);
+        }
+
+        const saved = localStorage.getItem('privacy_lang');
+        setLang(saved || 'pt');
+
+        buttons.forEach((btn) => {
+          btn.addEventListener('click', () => setLang(btn.getAttribute('data-lang-btn')));
+        });
+      })();
+    </script>
   </body>
-  </html>
+</html>
 
