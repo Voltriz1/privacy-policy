@@ -11,7 +11,7 @@
             box-sizing: border-box;
         }
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.8;
             color: #333;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -19,7 +19,7 @@
             padding: 20px;
         }
         .container {
-            max-width: 800px;
+            max-width: 860px;
             margin: 0 auto;
             background: #fff;
             border-radius: 16px;
@@ -27,78 +27,109 @@
             overflow: hidden;
         }
         .header {
-            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            padding: 40px;
+            background: linear-gradient(135deg, #4facfe 0%, #00c6ff 100%);
+            padding: 32px 24px 24px;
             text-align: center;
             color: #fff;
+            position: relative;
+        }
+        .lang-switch {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            display: flex;
+            gap: 8px;
+        }
+        .lang-switch button {
+            border: 0;
+            border-radius: 999px;
+            padding: 8px 14px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+            background: rgba(255,255,255,0.25);
+            color: #fff;
+            transition: background 0.2s ease, transform 0.2s ease;
+        }
+        .lang-switch button.active,
+        .lang-switch button:hover {
+            background: #fff;
+            color: #1576d6;
+            transform: translateY(-1px);
         }
         .header h1 {
-            font-size: 2.5em;
+            font-size: 2.2em;
             margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.12);
         }
         .header .app-name {
-            font-size: 1.3em;
-            opacity: 0.9;
+            font-size: 1.15em;
+            opacity: 0.96;
         }
         .content {
-            padding: 40px;
+            padding: 36px 28px;
         }
-        .last-updated {
+        .lang-content {
+            display: none;
+        }
+        .lang-content.active {
+            display: block;
+        }
+        .meta-box {
             background: #f8f9fa;
-            padding: 15px 20px;
-            border-radius: 8px;
-            margin-bottom: 30px;
-            color: #666;
-            font-size: 0.95em;
+            padding: 16px 18px;
+            border-radius: 10px;
+            margin-bottom: 24px;
+            color: #555;
+            font-size: 0.96em;
+        }
+        .meta-box strong {
+            color: #222;
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, #e8f4f8 0%, #eefaf1 100%);
+            border-left: 4px solid #4facfe;
+            padding: 18px;
+            margin: 24px 0;
+            border-radius: 0 8px 8px 0;
         }
         h2 {
-            color: #4facfe;
-            font-size: 1.5em;
-            margin-top: 35px;
-            margin-bottom: 15px;
-            padding-bottom: 10px;
+            color: #2587df;
+            font-size: 1.4em;
+            margin-top: 30px;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
             border-bottom: 2px solid #e9ecef;
         }
         h2:first-of-type {
             margin-top: 0;
         }
         p {
-            margin-bottom: 15px;
+            margin-bottom: 12px;
             color: #555;
         }
         ul {
-            margin: 15px 0 15px 25px;
+            margin: 12px 0 12px 22px;
         }
         li {
-            margin-bottom: 10px;
+            margin-bottom: 8px;
             color: #555;
-        }
-        .highlight-box {
-            background: linear-gradient(135deg, #e8f4f8 0%, #e8f8f0 100%);
-            border-left: 4px solid #4facfe;
-            padding: 20px;
-            margin: 25px 0;
-            border-radius: 0 8px 8px 0;
-        }
-        .highlight-box p {
-            margin-bottom: 0;
         }
         .contact-box {
             background: #f8f9fa;
             border-radius: 12px;
-            padding: 25px;
-            margin-top: 30px;
+            padding: 22px;
+            margin-top: 28px;
             text-align: center;
         }
         .contact-box h3 {
             color: #333;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
         }
         .contact-box a {
-            color: #4facfe;
+            color: #2587df;
             text-decoration: none;
-            font-size: 1.1em;
+            font-size: 1.05em;
             font-weight: 600;
         }
         .contact-box a:hover {
@@ -106,95 +137,214 @@
         }
         .footer {
             background: #f8f9fa;
-            padding: 20px 40px;
+            padding: 20px 28px;
             text-align: center;
             color: #888;
             font-size: 0.9em;
         }
         .badge {
             display: inline-block;
-            background: #4facfe;
+            background: #2587df;
             color: #fff;
-            padding: 5px 15px;
+            padding: 5px 14px;
             border-radius: 20px;
-            font-size: 0.85em;
-            margin-right: 10px;
-            margin-bottom: 5px;
+            font-size: 0.82em;
+            margin: 4px 6px;
+        }
+        code {
+            background: #f3f5f7;
+            padding: 2px 6px;
+            border-radius: 6px;
+            font-size: 0.95em;
+        }
+        @media (max-width: 640px) {
+            body {
+                padding: 10px;
+            }
+            .header {
+                padding-top: 64px;
+            }
+            .lang-switch {
+                top: 12px;
+                right: 12px;
+            }
+            .content {
+                padding: 24px 18px;
+            }
+            .header h1 {
+                font-size: 1.8em;
+            }
         }
     </style>
 </head>
 <body>
     <div class="container">
         <div class="header">
+            <div class="lang-switch">
+                <button id="btn-en" class="active" onclick="switchLang('en')">English</button>
+                <button id="btn-zh" onclick="switchLang('zh')">中文</button>
+            </div>
             <h1>🔐 Privacy Policy</h1>
-            <div class="app-name">QuickCurrency App</div>
+            <div class="app-name">QuickCurrency</div>
         </div>
-        
+
         <div class="content">
-            <div class="last-updated">
-                <strong>Last Updated:</strong> February 2026
+            <div id="content-en" class="lang-content active">
+                <div class="meta-box">
+                    <p><strong>App name:</strong> QuickCurrency</p>
+                    <p><strong>Developer:</strong> Joao Paulo Fernandes</p>
+                    <p><strong>Last updated:</strong> March 2026</p>
+                </div>
+
+                <div class="highlight-box">
+                    <p><strong>Summary:</strong> QuickCurrency is a currency conversion utility. We do not require user registration and we do not collect personal identifiers such as your name, email address, or password for the app’s core currency conversion function. The app may use third-party advertising SDKs in supported versions of the app.</p>
+                </div>
+
+                <h2>1. Information We Collect and Process</h2>
+                <p>QuickCurrency itself does not collect or store the following for its core features:</p>
+                <ul>
+                    <li>Name, email address, phone number, or postal address</li>
+                    <li>Password, account credentials, or contact list</li>
+                    <li>Bank account or payment card information</li>
+                </ul>
+                <p>To provide app functionality and advertising support, the app or integrated third-party SDKs may process limited device-related information such as:</p>
+                <ul>
+                    <li>Advertising identifiers and device identifiers</li>
+                    <li>Approximate or precise location information</li>
+                    <li>Device, network, and connection status</li>
+                    <li>Installed app visibility or app availability checks used for deep links and SDK compatibility</li>
+                </ul>
+
+                <h2>2. App Functionality Data</h2>
+                <p>The app uses an internet connection to request exchange rates from third-party API providers. These requests are used only to provide currency conversion results. We also store your selected theme, language, time format, and currency preferences locally on your device.</p>
+
+                <h2>3. Advertising Services</h2>
+                <p>QuickCurrency may use third-party advertising services depending on the app version and distribution channel, including:</p>
+                <ul>
+                    <li><strong>Google AdMob</strong></li>
+                    <li><strong>Huawei Ads Kit / Petal Ads</strong></li>
+                </ul>
+                <p>These services may process device-related information for ad delivery, advertising measurement, anti-fraud protection, regional compliance, deep-link handling, and service compatibility.</p>
+
+                <h2>4. Permissions</h2>
+                <p>The app may request or include permissions such as Internet access, network state, advertising ID access, approximate location, precise location, Bluetooth-related access, phone/network state, and installed-app visibility. Some of these permissions are required by integrated advertising SDKs rather than the core currency conversion feature itself.</p>
+
+                <h2>5. Disclosure to Third Parties</h2>
+                <p>We may disclose limited device-related data to third-party service providers only as necessary to provide exchange-rate data and advertising services. This includes API providers and advertising SDK providers such as Google and Huawei. We do not sell your personal information.</p>
+
+                <h2>6. Data Storage and Security</h2>
+                <p>Data transmission for exchange-rate requests and advertising services is performed over encrypted network connections where supported. Preference settings are stored locally on your device. QuickCurrency does not maintain user accounts or store personal identity data on its own servers for the core app experience.</p>
+
+                <h2>7. Children's Privacy</h2>
+                <p>QuickCurrency is a general-purpose utility application. We do not knowingly collect personal information from children through the app’s core functionality.</p>
+
+                <h2>8. Your Rights and Choices</h2>
+                <p>You can manage some advertising and privacy preferences through your device settings. You may also choose to stop using the app at any time and remove locally stored preferences by uninstalling the app.</p>
+
+                <h2>9. Contact Us</h2>
+                <p>If you have questions about this Privacy Policy, please contact the developer:</p>
+                <div class="contact-box">
+                    <h3>Developer Contact</h3>
+                    <p><strong>Developer:</strong> Joao Paulo Fernandes</p>
+                    <a href="mailto:mindlusolabs@gmail.com">mindlusolabs@gmail.com</a>
+                </div>
             </div>
 
-            <div class="highlight-box">
-                <p><strong>Summary:</strong> QuickCurrency is designed to be a safe and transparent utility. While we do not collect personal identifiers like names or emails, we use industry-standard tools for advertising to keep the app free for everyone.</p>
-            </div>
+            <div id="content-zh" class="lang-content">
+                <div class="meta-box">
+                    <p><strong>应用名称：</strong>QuickCurrency</p>
+                    <p><strong>开发者：</strong>Joao Paulo Fernandes</p>
+                    <p><strong>最后更新：</strong>2026年3月</p>
+                </div>
 
-            <h2>📱 Information We Collect</h2>
-            <p>We prioritize your privacy. We do not collect, store, or share any of the following personal data:</p>
-            <ul>
-                <li>Personal identification (name, email, phone number)</li>
-                <li>Financial or bank account details</li>
-                <li>Contact lists or personal files</li>
-                <li>User credentials or passwords</li>
-            </ul>
+                <div class="highlight-box">
+                    <p><strong>摘要：</strong>QuickCurrency 是一款汇率换算工具。应用核心功能无需注册账号，也不会为核心换算功能收集您的姓名、电子邮箱或密码等个人身份信息。在支持广告的版本中，应用可能会使用第三方广告 SDK。</p>
+                </div>
 
-            <h2>🆔 Advertising & Device IDs</h2>
-            <p>We use the Google Advertising ID to provide relevant advertisements and perform basic analytics. The application requests the <code>AD_ID</code> permission to comply with Google Play's technical requirements for ad delivery.</p>
-            <p><strong>Your Choices:</strong> You can manage your preferences, limit ad tracking, or reset your advertising identifier at any time through your device settings: <em>Settings > Google > Ads</em>.</p>
+                <h2>1. 我们收集和处理的信息</h2>
+                <p>对于应用核心功能，QuickCurrency 本身不会收集或存储以下信息：</p>
+                <ul>
+                    <li>姓名、电子邮箱地址、电话号码或邮寄地址</li>
+                    <li>密码、账号凭证或联系人列表</li>
+                    <li>银行卡信息或支付卡信息</li>
+                </ul>
+                <p>为了提供应用功能和广告支持，应用或集成的第三方 SDK 可能会处理部分设备相关信息，包括但不限于：</p>
+                <ul>
+                    <li>广告标识符和设备标识符</li>
+                    <li>大致位置或精确位置信息</li>
+                    <li>设备状态、网络状态和连接状态</li>
+                    <li>已安装应用可见性或用于深度链接和 SDK 兼容性的应用可用性检查</li>
+                </ul>
 
-            <h2>🌐 Data We Process</h2>
-            <p>The app requires an internet connection to function. During use, the following occurs:</p>
-            <ul>
-                <li><strong>Currency Exchange Rates:</strong> The app fetches real-time rates from third-party APIs. These requests do not contain personal data.</li>
-                <li><strong>Local Storage:</strong> Your theme preferences and default currency choices are stored locally on your device only.</li>
-            </ul>
+                <h2>2. 应用功能相关数据</h2>
+                <p>本应用需要联网从第三方 API 提供方获取汇率数据，该请求仅用于提供货币换算结果。我们还会将您选择的主题、语言、时间格式和默认货币偏好保存在您的设备本地。</p>
 
-            <h2>🚫 Third-Party Services</h2>
-            <p>Our app integrates the following services:</p>
-            <ul>
-                <li><strong>Exchange Rate API:</strong> To provide accurate conversion data.</li>
-                <li><strong>Google AdMob:</strong> To serve advertisements. AdMob may collect device identifiers to provide personalized ads and for fraud prevention.</li>
-            </ul>
+                <h2>3. 广告服务</h2>
+                <p>根据应用版本和分发渠道，QuickCurrency 可能会使用以下第三方广告服务：</p>
+                <ul>
+                    <li><strong>Google AdMob</strong></li>
+                    <li><strong>Huawei Ads Kit / Petal Ads</strong></li>
+                </ul>
+                <p>这些服务可能会处理设备相关信息，用于广告投放、广告效果衡量、反欺诈保护、区域合规、深度链接处理和服务兼容性。</p>
 
-            <h2>👶 Children's Privacy</h2>
-            <p>QuickCurrency is a general-purpose utility. We do not knowingly collect personal data from children. Our use of AdMob is configured to comply with Google Play's Families policies for appropriate content.</p>
+                <h2>4. 权限说明</h2>
+                <p>本应用可能会请求或包含以下权限，例如网络访问、网络状态、广告标识符访问、粗略位置、精确位置、蓝牙相关权限、电话/网络状态以及已安装应用可见性。其中部分权限由集成的广告 SDK 所需，并非货币换算核心功能本身所必需。</p>
 
-            <h2>🔒 Data Security</h2>
-            <p>All data transmitted for exchange rates or ads is encrypted in transit using HTTPS/SSL protocols. Since no personal data is stored on our servers, your information remains secure on your device.</p>
+                <h2>5. 向第三方披露</h2>
+                <p>我们可能仅在提供汇率数据和广告服务所必需的范围内，向第三方服务提供商披露有限的设备相关信息。这些第三方包括 API 提供方以及 Google、Huawei 等广告 SDK 提供方。我们不会出售您的个人信息。</p>
 
-            <h2>📍 Permissions</h2>
-            <ul>
-                <li><strong>Internet Access:</strong> To fetch exchange rates and load ads.</li>
-                <li><strong>Network State:</strong> To notify you if you are offline.</li>
-                <li><strong>AD_ID Permission:</strong> To allow the AdMob SDK to function correctly on Android 13+.</li>
-            </ul>
+                <h2>6. 数据存储与安全</h2>
+                <p>在支持的情况下，汇率请求和广告服务相关数据会通过加密网络连接传输。偏好设置仅保存在您的本地设备中。对于应用核心体验，QuickCurrency 不会在自有服务器上建立用户账号，也不会存储可识别个人身份的信息。</p>
 
-            <h2>📧 Contact Us</h2>
-            <p>If you have any questions regarding this policy, please contact us:</p>
-            
-            <div class="contact-box">
-                <h3>Developer Contact</h3>
-                <a href="mailto:jpff88@gmail.com">jpff88@gmail.com</a>
+                <h2>7. 未成年人隐私</h2>
+                <p>QuickCurrency 是一款通用工具类应用。对于应用核心功能，我们不会主动收集未成年人的个人信息。</p>
+
+                <h2>8. 您的权利与选择</h2>
+                <p>您可以通过设备系统设置管理部分广告和隐私偏好。您也可以随时停止使用本应用，并通过卸载应用清除本地保存的偏好设置。</p>
+
+                <h2>9. 联系我们</h2>
+                <p>如果您对本隐私政策有任何疑问，请通过以下方式联系开发者：</p>
+                <div class="contact-box">
+                    <h3>开发者联系方式</h3>
+                    <p><strong>开发者：</strong>Joao Paulo Fernandes</p>
+                    <a href="mailto:mindlusolabs@gmail.com">mindlusolabs@gmail.com</a>
+                </div>
             </div>
         </div>
 
         <div class="footer">
-            <span class="badge">Ad Supported</span>
-            <span class="badge">GDPR Compliant</span>
-            <span class="badge">Secure Data</span>
+            <span class="badge">QuickCurrency</span>
+            <span class="badge">Privacy Policy</span>
+            <span class="badge">Bilingual</span>
             <br><br>
             © 2026 QuickCurrency. All rights reserved.
         </div>
     </div>
+
+    <script>
+        function switchLang(lang) {
+            const en = document.getElementById('content-en');
+            const zh = document.getElementById('content-zh');
+            const btnEn = document.getElementById('btn-en');
+            const btnZh = document.getElementById('btn-zh');
+            const html = document.documentElement;
+
+            if (lang === 'zh') {
+                en.classList.remove('active');
+                zh.classList.add('active');
+                btnEn.classList.remove('active');
+                btnZh.classList.add('active');
+                html.setAttribute('lang', 'zh-CN');
+                document.title = '隐私政策 - QuickCurrency';
+            } else {
+                zh.classList.remove('active');
+                en.classList.add('active');
+                btnZh.classList.remove('active');
+                btnEn.classList.add('active');
+                html.setAttribute('lang', 'en');
+                document.title = 'Privacy Policy - QuickCurrency';
+            }
+        }
+    </script>
 </body>
 </html>
