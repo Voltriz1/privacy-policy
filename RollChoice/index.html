@@ -1,0 +1,611 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark" />
+    <meta name="theme-color" content="#07120d" />
+    <meta
+      name="description"
+      content="Privacy Policy for RollChoice: Decision Dice, published by MindLuso."
+    />
+    <meta property="og:title" content="RollChoice Privacy Policy" />
+    <meta
+      property="og:description"
+      content="How RollChoice stores local app data and uses Google Mobile Ads."
+    />
+    <meta property="og:type" content="website" />
+    <title>Privacy Policy | RollChoice: Decision Dice</title>
+    <style>
+      :root {
+        --page: #050a07;
+        --surface: #0a1811;
+        --surface-raised: #10251a;
+        --line: rgba(178, 255, 209, 0.16);
+        --text: #f2f7f3;
+        --muted: #aebdb3;
+        --mint: #79f2ad;
+        --mint-soft: #c4fbd9;
+        --pink: #ff5aa7;
+        --shadow: 0 24px 80px rgba(0, 0, 0, 0.34);
+        font-family:
+          Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont,
+          "Segoe UI", sans-serif;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        min-width: 320px;
+        margin: 0;
+        color: var(--text);
+        background:
+          radial-gradient(circle at 18% -8%, rgba(53, 202, 115, 0.2), transparent 32rem),
+          radial-gradient(circle at 88% 8%, rgba(255, 90, 167, 0.1), transparent 28rem),
+          var(--page);
+        font-size: 1rem;
+        line-height: 1.7;
+      }
+
+      a {
+        color: var(--mint);
+        text-decoration-thickness: 0.08em;
+        text-underline-offset: 0.2em;
+      }
+
+      a:hover {
+        color: var(--mint-soft);
+      }
+
+      a:focus-visible {
+        outline: 3px solid var(--pink);
+        outline-offset: 4px;
+        border-radius: 0.2rem;
+      }
+
+      .skip-link {
+        position: fixed;
+        top: 0.75rem;
+        left: 0.75rem;
+        z-index: 10;
+        padding: 0.65rem 1rem;
+        color: #041008;
+        background: var(--mint);
+        border-radius: 999px;
+        font-weight: 800;
+        transform: translateY(-160%);
+      }
+
+      .skip-link:focus {
+        transform: translateY(0);
+      }
+
+      .shell {
+        width: min(100% - 2rem, 72rem);
+        margin-inline: auto;
+      }
+
+      header {
+        padding: clamp(3.5rem, 9vw, 7.5rem) 0 2rem;
+      }
+
+      .brand {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.7rem;
+        margin-bottom: 2.5rem;
+        color: var(--text);
+        font-weight: 800;
+        letter-spacing: -0.02em;
+      }
+
+      .die-mark {
+        display: grid;
+        width: 2.5rem;
+        height: 2.5rem;
+        grid-template-columns: repeat(2, 0.38rem);
+        grid-template-rows: repeat(2, 0.38rem);
+        place-content: center;
+        gap: 0.38rem;
+        background: var(--mint);
+        border-radius: 0.72rem;
+        box-shadow: inset -0.22rem -0.28rem 0 rgba(0, 63, 30, 0.2);
+        transform: rotate(-8deg);
+      }
+
+      .die-mark span {
+        background: #082115;
+        border-radius: 50%;
+      }
+
+      .eyebrow {
+        margin: 0 0 0.6rem;
+        color: var(--mint);
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.16em;
+        text-transform: uppercase;
+      }
+
+      h1,
+      h2,
+      h3 {
+        margin-top: 0;
+        color: var(--text);
+        line-height: 1.15;
+        text-wrap: balance;
+      }
+
+      h1 {
+        max-width: 14ch;
+        margin-bottom: 1.25rem;
+        font-size: clamp(2.7rem, 8vw, 5.6rem);
+        letter-spacing: -0.065em;
+      }
+
+      h2 {
+        margin-bottom: 1rem;
+        font-size: clamp(1.45rem, 4vw, 2rem);
+        letter-spacing: -0.035em;
+      }
+
+      h3 {
+        margin-bottom: 0.45rem;
+        font-size: 1.05rem;
+      }
+
+      p,
+      ul {
+        margin-top: 0;
+      }
+
+      .intro {
+        max-width: 47rem;
+        margin-bottom: 1.5rem;
+        color: var(--muted);
+        font-size: clamp(1.05rem, 2.5vw, 1.3rem);
+      }
+
+      .meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .meta li {
+        padding: 0.45rem 0.8rem;
+        color: var(--muted);
+        background: rgba(121, 242, 173, 0.07);
+        border: 1px solid var(--line);
+        border-radius: 999px;
+        font-size: 0.85rem;
+      }
+
+      .layout {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        gap: 1.5rem;
+        padding-bottom: 5rem;
+      }
+
+      .summary {
+        padding: clamp(1.4rem, 4vw, 2.2rem);
+        background: linear-gradient(145deg, rgba(21, 62, 40, 0.96), rgba(10, 31, 20, 0.96));
+        border: 1px solid rgba(121, 242, 173, 0.25);
+        border-radius: 1.5rem;
+        box-shadow: var(--shadow);
+      }
+
+      .summary p:last-child {
+        margin-bottom: 0;
+      }
+
+      .policy {
+        overflow: hidden;
+        background: rgba(10, 24, 17, 0.88);
+        border: 1px solid var(--line);
+        border-radius: 1.5rem;
+        box-shadow: var(--shadow);
+      }
+
+      section {
+        padding: clamp(1.5rem, 4vw, 2.5rem);
+        scroll-margin-top: 1.5rem;
+      }
+
+      section + section {
+        border-top: 1px solid var(--line);
+      }
+
+      section p:last-child,
+      section ul:last-child {
+        margin-bottom: 0;
+      }
+
+      ul {
+        padding-left: 1.3rem;
+      }
+
+      li + li {
+        margin-top: 0.45rem;
+      }
+
+      .data-grid {
+        display: grid;
+        gap: 0.85rem;
+        margin-top: 1.3rem;
+      }
+
+      .data-card {
+        padding: 1.1rem;
+        background: rgba(121, 242, 173, 0.045);
+        border: 1px solid var(--line);
+        border-radius: 1rem;
+      }
+
+      .data-card p {
+        margin-bottom: 0;
+        color: var(--muted);
+      }
+
+      .callout {
+        margin-top: 1.3rem;
+        padding: 1rem 1.1rem;
+        color: var(--mint-soft);
+        background: rgba(121, 242, 173, 0.08);
+        border-left: 0.25rem solid var(--mint);
+        border-radius: 0.35rem 0.9rem 0.9rem 0.35rem;
+      }
+
+      .contact {
+        background: linear-gradient(145deg, rgba(255, 90, 167, 0.07), transparent 65%);
+      }
+
+      .contact-line {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.45rem;
+        align-items: baseline;
+      }
+
+      .email-placeholder {
+        color: #ffd1e6;
+        font-weight: 800;
+      }
+
+      footer {
+        padding: 0 0 3rem;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      footer .shell {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 1rem;
+      }
+
+      @media (min-width: 48rem) {
+        .data-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+      }
+
+      @media print {
+        :root {
+          color-scheme: light;
+        }
+
+        body {
+          color: #111;
+          background: #fff;
+          font-size: 10.5pt;
+        }
+
+        .shell {
+          width: 100%;
+        }
+
+        header {
+          padding-top: 1rem;
+        }
+
+        .brand,
+        h1,
+        h2,
+        h3 {
+          color: #111;
+        }
+
+        .eyebrow,
+        a,
+        .intro,
+        .meta li,
+        .data-card p,
+        footer {
+          color: #333;
+        }
+
+        .summary,
+        .policy,
+        .data-card,
+        .meta li,
+        .callout {
+          color: #111;
+          background: #fff;
+          border-color: #bbb;
+          box-shadow: none;
+        }
+
+        section {
+          break-inside: avoid;
+        }
+
+        .die-mark,
+        .skip-link,
+        .back-to-top {
+          display: none;
+        }
+      }
+    </style>
+  </head>
+  <body id="top">
+    <a class="skip-link" href="#policy">Skip to privacy policy</a>
+
+    <header>
+      <div class="shell">
+        <div class="brand" aria-label="RollChoice">
+          <span class="die-mark" aria-hidden="true">
+            <span></span><span></span><span></span><span></span>
+          </span>
+          <span>RollChoice</span>
+        </div>
+        <p class="eyebrow">Privacy, clearly explained</p>
+        <h1>Your choices stay yours.</h1>
+        <p class="intro">
+          This Privacy Policy explains how RollChoice: Decision Dice handles
+          information when you use the Android application.
+        </p>
+        <ul class="meta" aria-label="Policy details">
+          <li>Effective 21 July 2026</li>
+          <li>Version 1.0</li>
+          <li>Publisher: MindLuso</li>
+        </ul>
+      </div>
+    </header>
+
+    <main class="shell layout" id="policy">
+      <aside class="summary" aria-labelledby="summary-title">
+        <p class="eyebrow">At a glance</p>
+        <h2 id="summary-title">Privacy by design</h2>
+        <p>
+          RollChoice does not require an account. Your custom choices, decision
+          history and preferences are stored locally on your device. They are
+          not sent to MindLuso or included in advertising requests.
+        </p>
+      </aside>
+
+      <article class="policy">
+        <section aria-labelledby="scope-title">
+          <h2 id="scope-title">1. Scope</h2>
+          <p>
+            This policy applies to <strong>RollChoice: Decision Dice</strong>
+            for Android, package name
+            <strong>com.mindluso.the_dice_app</strong>, published by MindLuso.
+            It does not govern third-party websites or services linked from this
+            page.
+          </p>
+        </section>
+
+        <section aria-labelledby="local-title">
+          <h2 id="local-title">2. Information stored on your device</h2>
+          <p>
+            RollChoice stores the information needed to provide and personalise
+            its features locally on your device. This may include:
+          </p>
+          <div class="data-grid">
+            <div class="data-card">
+              <h3>Decision content</h3>
+              <p>Custom list names, choice text and your active decision set.</p>
+            </div>
+            <div class="data-card">
+              <h3>Decision history</h3>
+              <p>
+                Saved results, list names, choice counts and the date and time of
+                a roll, when history is enabled.
+              </p>
+            </div>
+            <div class="data-card">
+              <h3>App preferences</h3>
+              <p>
+                Language, colour theme, dice style, haptic-feedback and
+                history-saving settings.
+              </p>
+            </div>
+            <div class="data-card">
+              <h3>Consent preferences</h3>
+              <p>
+                Advertising privacy choices may be stored on the device by
+                Google's User Messaging Platform.
+              </p>
+            </div>
+          </div>
+          <p class="callout">
+            MindLuso does not operate an account system, cloud database,
+            analytics service or custom backend for this version of RollChoice.
+          </p>
+        </section>
+
+        <section aria-labelledby="ads-title">
+          <h2 id="ads-title">3. Advertising and third-party processing</h2>
+          <p>
+            RollChoice uses <strong>Google Mobile Ads</strong> to display banner
+            advertisements and Google's <strong>User Messaging Platform</strong>
+            to manage advertising privacy choices where required. Banner ads
+            appear only on the History and Settings screens.
+          </p>
+          <p>
+            Depending on your region, consent choices, device settings and the
+            way an advertisement is served, Google and its advertising partners
+            may process information such as:
+          </p>
+          <ul>
+            <li>device or advertising identifiers;</li>
+            <li>IP address and network information;</li>
+            <li>approximate location inferred from network information;</li>
+            <li>app and advertisement interactions;</li>
+            <li>diagnostic and performance information; and</li>
+            <li>consent and privacy signals.</li>
+          </ul>
+          <p>
+            This processing may be used to provide, measure, personalise and
+            secure advertising, where permitted. RollChoice does
+            <strong>not</strong> add your custom choice text, list names, roll
+            results or decision history to ad requests.
+          </p>
+          <p>
+            Learn more in
+            <a href="https://policies.google.com/privacy" rel="external noopener"
+              >Google's Privacy Policy</a
+            > and Google's explanation of
+            <a
+              href="https://policies.google.com/technologies/partner-sites"
+              rel="external noopener"
+              >how it uses information from sites or apps that use its services</a
+            >.
+          </p>
+        </section>
+
+        <section aria-labelledby="consent-title">
+          <h2 id="consent-title">4. Your advertising privacy choices</h2>
+          <p>
+            RollChoice requests current consent information when the app starts
+            and displays a privacy message when required. Where Google makes the
+            option available, you can review or change your advertising choices
+            from <strong>Settings &gt; Privacy choices</strong> in the app.
+          </p>
+          <p>
+            The app's core decision features remain usable if advertising is
+            unavailable. The type of ads that can be shown may depend on your
+            consent, location and applicable law.
+          </p>
+        </section>
+
+        <section aria-labelledby="sharing-title">
+          <h2 id="sharing-title">5. Sharing and sale of information</h2>
+          <p>
+            MindLuso does not sell your custom choices or decision history and
+            does not intentionally share that locally stored content with third
+            parties. Information processed through Google Mobile Ads is governed
+            by Google's policies, your consent choices and applicable law.
+          </p>
+        </section>
+
+        <section aria-labelledby="permissions-title">
+          <h2 id="permissions-title">6. Device access</h2>
+          <p>
+            RollChoice requires internet access for advertising. This version
+            does not request access to your camera, microphone, contacts, precise
+            location, photos, media files or notifications.
+          </p>
+        </section>
+
+        <section aria-labelledby="retention-title">
+          <h2 id="retention-title">7. Retention and deletion</h2>
+          <p>
+            Local decision lists and preferences remain until you change or
+            delete them, clear the app's storage, or uninstall the app, subject
+            to Android backup and restore behaviour. Saved decision history
+            remains until you delete an individual entry, clear all history, or
+            remove the app's local data.
+          </p>
+          <p>
+            You can disable new history entries and clear existing history from
+            within RollChoice. Advertising and consent information processed by
+            Google is retained according to Google's applicable policies and
+            your available privacy controls.
+          </p>
+        </section>
+
+        <section aria-labelledby="children-title">
+          <h2 id="children-title">8. Children's privacy</h2>
+          <p>
+            RollChoice is not directed to children under 13, or the applicable
+            minimum age in their country. MindLuso does not knowingly request
+            personal information directly from children. If you believe a child
+            has provided personal information in connection with the app, please
+            contact us so the concern can be reviewed.
+          </p>
+        </section>
+
+        <section aria-labelledby="international-title">
+          <h2 id="international-title">9. International processing</h2>
+          <p>
+            Google and its service providers may process advertising-related
+            information in countries other than the one where you live. Their
+            privacy policies describe the safeguards they apply to international
+            data transfers.
+          </p>
+        </section>
+
+        <section aria-labelledby="security-title">
+          <h2 id="security-title">10. Security</h2>
+          <p>
+            Local app information is protected by Android's application sandbox
+            and standard on-device storage. No storage or transmission method is
+            completely secure, but RollChoice limits the information it handles
+            and does not maintain a remote database containing your decisions.
+          </p>
+        </section>
+
+        <section aria-labelledby="changes-title">
+          <h2 id="changes-title">11. Changes to this policy</h2>
+          <p>
+            This policy may be updated when RollChoice's features, service
+            providers or legal obligations change. The effective date at the top
+            of this page will be revised when an updated policy is published.
+          </p>
+        </section>
+
+        <section class="contact" aria-labelledby="contact-title">
+          <h2 id="contact-title">12. Contact</h2>
+          <p>
+            For privacy questions or requests concerning RollChoice, contact:
+          </p>
+          <p><strong>Publisher:</strong> MindLuso</p>
+          <p class="contact-line">
+            <strong>Email:</strong>
+            <span class="email-placeholder">mindlusolabs@gmail.com</span>
+          </p>
+          <p>
+            Please do not include custom decisions or other sensitive personal
+            information in a public support request.
+          </p>
+        </section>
+      </article>
+    </main>
+
+    <footer>
+      <div class="shell">
+        <span>© 2026 MindLuso · RollChoice: Decision Dice</span>
+        <a class="back-to-top" href="#top">Back to top</a>
+      </div>
+    </footer>
+  </body>
+</html>
